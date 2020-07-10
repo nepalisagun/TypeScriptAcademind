@@ -1,18 +1,44 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
-  if (typeof n1 !== "number" || typeof n2 !== "number") {
-    throw new Error("Incorrect Input !!");
-  }
-  const result = n1 + n2;
-  if (showResult) {
-    console.log(phrase + result);
-  } else {
-    return n1 + n2;
-  }
+// const person: {
+//   name: string;
+//   age: number;
+//   hobbies: string[];
+//   role: [number, string];
+// } =
+//   //     : {
+//   //   name: string;
+//   //   age: number;
+//   // }
+//   {
+//     name: "Sagun",
+//     age: 35,
+//     hobbies: ["Sports", "Cooking"],
+//     role: [2, "author"],
+//   };
+
+//person.role.push("admin");
+//person.role[1] = 10;
+
+enum Role {
+  ADMIN = "ADMIN",
+  READ_ONLY = 100,
+  AUTHOR = 500,
 }
 
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true;
-const resultPhrase = "Result is : ";
+const person = {
+  name: "Sagun",
+  age: 35,
+  hobbies: ["Sports", "Cooking"],
+  role: Role.ADMIN,
+};
+let favoriteActivities: string[];
+favoriteActivities = ["Sports"];
 
-add(number1, number2, printResult, resultPhrase);
+console.log(person.name);
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
+}
+
+if (person.role === Role.AUTHOR) {
+  console.log(" is author");
+}
